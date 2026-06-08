@@ -299,6 +299,40 @@
             margin-top: 10px;
         }
 
+        .game-layout {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .game-layout .card-container {
+            flex-shrink: 0;
+            margin-bottom: 0;
+        }
+
+        .game-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 600px) {
+            .game-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .game-right {
+                width: 100%;
+                align-items: center;
+            }
+
+            .options {
+                width: 100%;
+            }
+        }
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 1.8em;
@@ -352,14 +386,19 @@
 
             <div id="gameContent">
                 <div class="question" id="question"></div>
-                
-                <div class="card-container">
-                    <div class="card" id="card"></div>
-                </div>
 
-                <div class="options" id="options"></div>
-                <div class="feedback" id="feedback"></div>
-                <button class="next-button" id="nextButton" disabled>Siguiente</button>
+                <div class="game-layout">
+
+                    <div class="card-container">
+                        <div class="card" id="card"></div>
+                    </div>
+
+                    <div class="game-right">
+                        <div class="options" id="options"></div>
+                        <div class="feedback" id="feedback"></div>
+                        <button class="next-button" id="nextButton" disabled>Siguiente</button>
+                    </div>
+                </div>
             </div>
 
             <div id="gameOverContent" style="display:none;" class="game-over">
